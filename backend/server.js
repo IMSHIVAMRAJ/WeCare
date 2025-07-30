@@ -31,14 +31,14 @@ app.use(express.json());
 app.use(cookieParser());
 
 // API Routes
-// app.use("/api/auth", authRoutes);
-// app.use("/api/services", serviceRoutes);
-// app.use("/api/booking", bookingRoutes);
-// app.use("/api/users", userRoutes);
-// app.use("/api/beautician", beauticianRoutes);
-// app.use("/api/admin-auth", adminAuthRoutes);
-// app.use("/api/admin", adminRoutes);
-// app.use("/api/locations", locationRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/services", serviceRoutes);
+app.use("/api/booking", bookingRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/beautician", beauticianRoutes);
+app.use("/api/admin-auth", adminAuthRoutes);
+app.use("/api/admin", adminRoutes);
+app.use("/api/locations", locationRoutes);
 
 // Database Connection and Server Start
 mongoose
