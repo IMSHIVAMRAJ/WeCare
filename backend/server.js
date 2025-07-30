@@ -1,14 +1,67 @@
-import express from 'express';
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+import mongoose from "mongoose";
+import cookieParser from "cookie-parser";
+// import adminRoutes from "./routes/admin.routes.js";
+// import authRoutes from "./routes/auth.routes.js";
+// import serviceRoutes from "./routes/service.routes.js";
+// import bookingRoutes from "./routes/booking.routes.js";
+// import userRoutes from "./routes/user.routes.js";
+// import beauticianRoutes from "./routes/beautician.routes.js";
+// import locationRoutes from "./routes/locationRoutes.js";
+// import adminAuthRoutes from "./routes/adminAuth.routes.js";
 
+dotenv.config();
 const app = express();
-const PORT = process.env.PORT || 8080;
 
-console.log("✅✅✅ FINAL TEST: Deployment is working.");
+// --- START: Updated CORS Configuration ---
+const corsOptions = {
+  origin: "https://we-caree.vercel.app", // Your frontend's origin
+  methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
+  credentials: true, // IMPORTANT: Allow cookies to be sent
+};
 
-app.get('/', (req, res) => {
-  res.send('Test server is online!');
-});
+app.use(cors(corsOptions));
+// Handle pre-flight requests for all routes
+app.options('*', cors(corsOptions));
+// --- END: Updated CORS Configuration ---
 
-app.listen(PORT, () => {
-  console.log(`Test server is running on port ${PORT}`);
-});
+app.use(express.json());
+app.use(cookieParser());
+
+// // API Routes
+// app.use("/api/auth", authRoutes);
+// app.use("/api/services", serviceRoutes);
+// app.use("/api/booking", bookingRoutes);
+// app.use("/api/users", userRoutes);
+// app.use("/api/beautician", beauticianRoutes);
+// app.use("/api/admin-auth", adminAuthRoutes);
+// app.use("/api/admin", adminRoutes);
+// app.use("/api/locations", locationRoutes);
+
+// // Database Connection and Server Start
+// mongoose
+//   .connect(process.env.MONGO_URI)
+//   .then(() =>
+//     app.listen(process.env.PORT, () =>
+//       console.log(`✅ Server running on port ${process.env.PORT}`)
+//     )
+//   )
+//   .catch((err) => console.error("❌ Failed to connect to MongoDB", err));
+
+
+// import express from 'express';
+
+// const app = express();
+// const PORT = process.env.PORT || 8080;
+
+// console.log("✅✅✅ FINAL TEST: Deployment is working.");
+
+// app.get('/', (req, res) => {
+//   res.send('Test server is online!');
+// });
+
+// app.listen(PORT, () => {
+//   console.log(`Test server is running on port ${PORT}`);
+// });
