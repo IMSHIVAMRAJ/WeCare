@@ -52,9 +52,11 @@ router.post(
   addService
 );
 router.get("/getservices", getAllServices);
-export default router;
+
 router.delete("/service/:id", protect, adminOnly, deleteService);
 router.put("/assign-beautician",  protect, adminOnly, assignBeauticianToBooking); 
 router.get("/beauticianslot", protect, adminOnly, getAllBeauticianslot);
 router.patch("/bookings/:id/assign", protect, adminOnly, approveBookingAndAssignBeautician);
 router.get("/allbookings", protect, adminOnly, getAllBookings);
+
+export default router;
