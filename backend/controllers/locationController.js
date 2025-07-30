@@ -1,4 +1,4 @@
-import Location from "../models/location.js";
+import Location from "../models/Location.js";
 import NodeGeocoder from "node-geocoder";
 
 // Configure the geocoder
