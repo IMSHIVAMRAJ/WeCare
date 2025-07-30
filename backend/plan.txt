@@ -1,0 +1,88 @@
+1.otp verification
+2.for registration it asks full name phone no email gender referall code
+3 then ask for use your current location or choose another location 
+4.if the service is available in that location it open the home page if the service is not available at the location it will stay at the page
+5.home page shows services that will be added by backend 
+  the services contains -
+    service name
+    category 
+    subcategory
+    service image
+    service subimages
+    service charge
+    service discount
+    price after discount
+    service discription in points
+    images are saved to cloudinary
+    
+6. trending services option based on services that are being used very much
+7. a option to make your own sevice that will display all the services name and you can select from them and make your own sevice 
+7. i can add services to the cart and the cart will show the total amount 
+8. then after it will ask for your address where you live 
+9. then a summary page that will show all your order details and a option to select slot
+10 . on clicking select slot it will ask for the date and service slot time to book the appointment 
+11. discount coupon if available for extra discount 
+12 . then payment option through razorpay
+13 . on successful payment the order will be created 
+14 . their should also be a page to show your booking or appointment where you can also cancel the booking or reshedule it or see the Booking status: pending, accepted, completed, cancelled
+15. a profile page to update your profile , add your picture
+16 . option to give reviews and rating along with picture 
+Features :
+User side:
+
+Browse services
+Booking with time slot
+Apply coupons
+Payment method- Razorpay
+Address save karne ka option
+See booking history
+Cancel/Reschedule
+Give rating/review
+
+Beautician side
+Set time availability
+Accept/reject bookings
+See earnings
+Manage their services
+See upcoming bookings
+
+Admin side
+Dashboard
+Booking analytics
+Beautician verification
+Payout management
+
+
+final Features till now 
+
+👤 User Side
+✅ OTP Verification
+✅ Location-based access
+✅ Browse all services
+✅ Cart + Coupon support
+✅ Razorpay payment integration
+✅ Booking with date/time slot
+✅ Auto-beautician assignment based on availability
+✅ See past + current bookings
+✅ Cancel booking
+✅ Profile management
+✅ Review & rating (abhi baki hai agar krna hoga too)
+
+💁‍♀️ Beautician Side
+✅ Admin-only registration
+✅ Beautician login
+✅ Set available slots
+✅ Get upcoming assigned bookings
+✅ Auto-assigned if available
+✅ Earnings (bss thoda sa kiya hai agar future me lgana hoga too)
+
+👨‍💼 Admin Side
+✅ Admin login with unique email
+✅ Add/verify beauticians
+✅ Approve services
+✅ Add locations
+✅ Create/manage coupons
+✅ Full booking control via DB
+
+
+

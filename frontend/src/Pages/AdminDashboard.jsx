@@ -1,0 +1,88 @@
+import React, { useState } from "react";
+import BeauticianManagement from "./BeauticianManagement";
+import ServiceApproval from "./ServiceApproval";
+import LocationManagement from "./LocationManagement";
+import CouponManagement from "./CouponManagement";
+import BookingControl from "./BookingControl";
+import BeauticianSlots from "./BeauticianSlots";
+import { LogOut } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+
+const sections = [
+  { name: "Care Experts" },
+  { name: "Services" },
+  { name: "Manage Locations" },
+  { name: "Add Coupons" },
+  { name: "Bookings" },
+  { name: "Availabilties" },
+ 
+ 
+];
+
+const mockSkinProblems = [
+  { name: "Aarti Sharma", number: "9876543210", problem: "Acne and pigmentation" },
+  { name: "Priya Singh", number: "9123456780", problem: "Dry skin and redness" },
+  { name: "Meena Kumari", number: "9988776655", problem: "Dark spots" },
+];
+
+const mockHairProblems = [
+  { name: "Rohit Verma", number: "9876501234", problem: "Hair fall and dandruff" },
+  { name: "Sonal Jain", number: "9001122334", problem: "Split ends" },
+  { name: "Kiran Patel", number: "9876123450", problem: "Premature greying" },
+];
+
+const AdminDashboard = () => {
+  const [active, setActive] = useState(sections[0].name);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('adminToken');
+    navigate('/admin/login');
+  };
+
+  return (
+    <div className="min-h-screen flex bg-gradient-to-br from-[#814393] to-[#a344c2]">
+      {/* Sidebar */}
+      <aside className="w-64 bg-white/90 shadow-lg flex flex-col py-8 px-4 min-h-screen">
+        <h2 className="text-2xl font-extrabold text-black mb-8 text-center">Admin Dashboard</h2>
+        <nav className="flex flex-col gap-2 flex-1">
+          {sections.map((section) => (
+            <button
+              key={section.name}
+              onClick={() => setActive(section.name)}
+              className={`text-left px-4 py-3 rounded-lg font-semibold text-base transition-all duration-150 ${
+                active === section.name
+                  ? "bg-gradient-to-r from-[#814393] to-[#a344c2] text-white shadow"
+                  : "text-gray-700 hover:bg-pink-50"
+              }`}
+            >
+              {section.name}
+            </button>
+          ))}
+        </nav>
+        <button
+          onClick={handleLogout}
+          className="w-full flex items-center gap-2 px-4 py-3 rounded-lg text-left text-red-600 font-semibold hover:bg-red-50 transition mt-8"
+        >
+          <LogOut className="w-5 h-5 mr-2" /> Logout
+        </button>
+      </aside>
+      {/* Main Content */}
+      <main className="flex-1 flex flex-col items-start p-8">
+        <div className="bg-white/90 rounded-2xl shadow-xl p-10 w-full min-h-[300px] flex flex-col items-start h-[calc(100vh-4rem)] max-h-[calc(100vh-4rem)] overflow-y-auto">
+          {active === "Care Experts" && <BeauticianManagement />}
+          {active === "Services" && <ServiceApproval />}
+          {active === "Manage Locations" && <LocationManagement />}
+          {active === "Add Coupons" && <CouponManagement />}
+          {active === "Bookings" && <BookingControl />}
+          {active === "Availabilties" && <BeauticianSlots />}
+
+
+          
+        </div>
+      </main>
+    </div>
+  );
+};
+
+export default AdminDashboard; 
