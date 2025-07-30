@@ -7,7 +7,7 @@ import { getUserBookings } from "../controllers/bookingController.js";
 const router = express.Router();
 
 router.get("/me", protect, getProfile);
-router.delete("/deleteProfile", protect, deleteProfile);
+router.delete("/deleteProfile/:id", protect, deleteProfile);
 
 router.put("/update", protect, upload.single("profileImage"), updateProfile);
 
