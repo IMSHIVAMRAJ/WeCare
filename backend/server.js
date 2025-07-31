@@ -24,8 +24,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 // Handle pre-flight requests for all routes
-app.use(cors(corsOptions));
-// --- END: Updated CORS Configuration ---
+
 
 app.use(express.json());
 app.use(cookieParser());
