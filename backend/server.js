@@ -9,7 +9,7 @@ import serviceRoutes from "./routes/service.routes.js";
 import bookingRoutes from "./routes/booking.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import beauticianRoutes from "./routes/beautician.routes.js";
-import locationRoutes from "./routes/locationRoutes.js";
+import locationRoutes from "./routes/locationroutes.js";
 import adminAuthRoutes from "./routes/adminAuth.routes.js";
 
 dotenv.config();
@@ -18,13 +18,13 @@ const app = express();
 // --- START: Updated CORS Configuration ---
 const corsOptions = {
   origin: "https://we-caree.vercel.app", // Your frontend's origin
-  methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
+  methods: ["GET","POST","PUT","DELETE"], // Allowed HTTP methods
   credentials: true, // IMPORTANT: Allow cookies to be sent
 };
 
 app.use(cors(corsOptions));
 // Handle pre-flight requests for all routes
-app.options('*', cors(corsOptions));
+app.use(cors(corsOptions));
 // --- END: Updated CORS Configuration ---
 
 app.use(express.json());

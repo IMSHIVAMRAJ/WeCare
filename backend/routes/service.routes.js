@@ -24,5 +24,5 @@ router.post(
 router.get("/allservices", getAllServices);
 router.get("/trending", getTrendingServices);
 router.patch("/service/:id/approve", protect, adminOnly, approveService);
-router.delete("/:id", protect, adminOnly, deleteService);
+router.delete("/service/:id", protect, adminOnly, deleteService);
 export default router;

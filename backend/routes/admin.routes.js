@@ -60,3 +60,4 @@ router.patch("/bookings/:id/assign", protect, adminOnly, approveBookingAndAssign
 router.get("/allbookings", protect, adminOnly, getAllBookings);
 
 export default router;
+
