@@ -9,7 +9,7 @@ import serviceRoutes from "./routes/service.routes.js";
 import bookingRoutes from "./routes/booking.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import beauticianRoutes from "./routes/beautician.routes.js";
-import locationRoutes from "./routes/locationroutes.js";
+import locationRoutes from "./routes/location.routes.js";
 import adminAuthRoutes from "./routes/adminAuth.routes.js";
 
 dotenv.config();
