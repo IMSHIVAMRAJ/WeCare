@@ -30,7 +30,7 @@ const Navbar = () => {
   useEffect(() => {
     if (locationDropdown && locations.length === 0) {
       setLoadingLocations(true)
-      fetch("/api/locations")
+      fetch('${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/locations')
         .then((res) => res.json())
         .then((data) => {
           if (data.success) setLocations(data.locations)
