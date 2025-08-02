@@ -70,7 +70,7 @@ const handleGeoLocate = () => {
     async (pos) => {
       const { latitude, longitude } = pos.coords;
       try {
-        const res = await fetch("/api/locations/reverse-geocode", {
+        const res = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/locations/reverse-geocode`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ lat: latitude, lng: longitude }),

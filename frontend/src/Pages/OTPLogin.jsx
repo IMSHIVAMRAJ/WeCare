@@ -31,7 +31,7 @@ const LoginWithEmail = () => {
       });
 
       const data = await res.json();
-      console.log("Login response:", data);
+      // console.log("Login response:", data);
 
       if (res.ok && data.token) {
         // Set the token in local storage
