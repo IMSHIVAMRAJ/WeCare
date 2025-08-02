@@ -103,7 +103,7 @@ const ServiceApproval = () => {
 
     try {
       const token = localStorage.getItem("adminToken");
-      await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}api/admin/add-service`, formData, {
+      await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/admin/add-service`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",
